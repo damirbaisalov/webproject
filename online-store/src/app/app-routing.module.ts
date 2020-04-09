@@ -9,6 +9,8 @@ import {ProductListComponent} from './components/product-list/product-list.compo
 import {ProductDetailComponent} from './components/product-detail/product-detail.component';
 import {ShoppingCartComponent} from './components/shopping-cart/shopping-cart.component';
 
+import {RegistrationComponent} from './components/registration/registration.component';
+import {LoginComponent} from './components/login/login.component';
 
 const routes: Routes = [
   {path: '', component: FirstPageHomeComponent},
@@ -16,7 +18,9 @@ const routes: Routes = [
   {path: 'categories/:id', component: CategoryDetailComponent},
   {path: 'products', component: ProductListComponent },
   {path: 'products/:productsId', component: ProductDetailComponent },
-  { path: 'cart', component: ShoppingCartComponent },
+  {path: 'cart', component: ShoppingCartComponent },
+  {path: 'login', component: LoginComponent },
+  {path: 'registration', component: RegistrationComponent}
 ];
 
 // @NgModule({

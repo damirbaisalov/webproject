@@ -1,0 +1,45 @@
+.registr{
+  width: 400px;
+  height: 435px;
+  margin-left: 400px;
+  border-radius: 5px;
+  border: 1px solid rgb(153, 153, 240);
+  margin-top: 150px;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h2{
+  text-align: center;
+}
+.inputs{
+  width: 300px;
+  height: 30px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: 1px solid rgb(153, 153, 240);
+}
+.inputs :hover{
+  color: rgb(78, 80, 228);
+}
+table{
+  margin-left: 50px;
+}
+p{
+  margin-top: 5px;
+  margin-left: 53px;
+}
+#create{
+  width: 250px;
+  height: 45px;
+  border-radius: 5px;
+  border: 1px solid rgb(79, 79, 241);
+  background-color: rgb(79, 79, 241);
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 80px;
+}
+
+#create :hover{
+  color: rgb(10, 10, 221);
+}
