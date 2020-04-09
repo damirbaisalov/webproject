@@ -1,0 +1,15 @@
+<p>shopping-cart works!</p>
+<div *ngFor = "let product of productsInCart" >
+    <p>{{product.name}}</p>
+    <h3>
+      <img [src]="product.image_src" >
+      <p *ngIf = "product.description">
+        Description: {{product.description}}
+      </p>
+      <p>
+        Price: {{product.price}}
+      </p>
+      <button (click)= "removeProductFromCart(product)" >Remove from cart</button>
+    </h3>
+    <hr>
+  </div>

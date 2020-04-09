@@ -1,0 +1,20 @@
+<p>product-detail works!</p>
+<div *ngFor = "let product of productsList">
+    <div *ngIf = "selectedProductId == product.id">
+
+        <div >
+          <img [src]="product.image_src">
+        </div>
+        <nav ><h2 >{{product.name}}</h2>
+        <p >
+            {{product.price}} тнг.
+        </p>
+        <p>
+            {{product.description}}
+            </p>
+        <button (click)= "onAddToCart(product)" >ADD TO CHART</button>
+        </nav>
+        <div><img [src]="product.image_src"></div>
+        <div><img [src]="product.image_src"></div>
+    </div>
+</div>

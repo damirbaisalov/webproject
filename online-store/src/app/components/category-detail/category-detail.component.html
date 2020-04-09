@@ -1,0 +1,13 @@
+<div *ngFor = "let product of productsOfCategory" >
+
+    <img [src]="product.image || product.image_src"
+        [routerLink]="['/products', product.id ]" >
+    <p (click)= "onSelect(product)">
+      <a [routerLink]="['/products', product.id ]" >{{product.name}}</a>
+      <br>
+      <a >
+        {{product.price}} тнг.</a><br>
+      <button (click)= "onAddToShopCart(product)" >Add to Cart</button>
+    </p>
+
+  </div>
