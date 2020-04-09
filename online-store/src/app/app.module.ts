@@ -16,6 +16,7 @@ import { FirstPageHomeComponent } from './components/first-page-home/first-page-
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import {HttpClientModule} from '@angular/common/http';
+import { ProductSearchComponent } from './components/product-search/product-search.component';
 
 
 
@@ -30,7 +31,8 @@ import {HttpClientModule} from '@angular/common/http';
     CategoryDetailComponent,
     ProductListComponent,
     ProductDetailComponent,
-    FirstPageHomeComponent
+    FirstPageHomeComponent,
+    ProductSearchComponent
   ],
   imports: [
     BrowserModule,
