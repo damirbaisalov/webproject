@@ -5,7 +5,7 @@ import {Category} from '../../interfaces/category';
 import {ProductListService} from '../../services/product-list.service';
 import {ShoppingCartService} from '../../services/shopping-cart.service';
 import {CategoryListService} from '../../services/category-list.service';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute} from '@angular/router';
 import { CategoryListComponent } from '../category-list/category-list.component';
 
 @Component({
@@ -15,21 +15,18 @@ import { CategoryListComponent } from '../category-list/category-list.component'
 })
 export class ProductListComponent implements OnInit {
 
-
   constructor(private route: ActivatedRoute, private productListService: ProductListService, private shopCartService: ShoppingCartService, private categoryListService: CategoryListService) { }
 
   productsList: Product[];
   products: Product[];
   categories: Category[];
-  isSort: Boolean;
+  selectedProduct: Product;
 
   ngOnInit(): void {
-    this.getProductList()
-    this.getCategories()
-    this.getListOfProducts()
+    this.getProductList();
+    this.getCategories();
+    this.getListOfProducts();
   }
-
-  selectedProduct: Product;
 
   getCategories() {
       this.categoryListService.getCategory().subscribe(c => this.categories = c);
@@ -40,17 +37,15 @@ export class ProductListComponent implements OnInit {
   }
 ///////
   getProductList(): void {
-    this.productListService.getProductList().subscribe( c => this.productsList = c)
+    this.productListService.getProductList().subscribe( c => this.productsList = c);
+  }
+
+  onSelect(product: Product): void {
+    this.selectedProduct = product;
   }
 
   onAddToShopCart(product: Product): void {
-    this.shopCartService.addProductToShopCart(product)
+    this.shopCartService.addProductToShopCart(product);
   }
 
-  onSelect(product:Product): void{
-    this.selectedProduct = product;
-  }
-  onSortByPrice(){
-      
-  }
 }

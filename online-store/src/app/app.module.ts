@@ -13,6 +13,10 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { FirstPageHomeComponent } from './components/first-page-home/first-page-home.component';
 
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './services/in-memory-data.service';
+import {HttpClientModule} from '@angular/common/http';
+
 
 
 @NgModule({
@@ -30,7 +34,12 @@ import { FirstPageHomeComponent } from './components/first-page-home/first-page-
   ],
   imports: [
     BrowserModule,
-   AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

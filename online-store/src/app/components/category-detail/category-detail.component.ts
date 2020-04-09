@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute} from '@angular/router';
 
 import {Product} from '../../interfaces/product';
 import {ProductListService} from '../../services/product-list.service';
@@ -12,16 +12,17 @@ import {Category} from '../../interfaces/category';
   styleUrls: ['./category-detail.component.css']
 })
 export class CategoryDetailComponent implements OnInit {
+  constructor(private route: ActivatedRoute,
+              private productListService: ProductListService,
+              private shoppingCartService: ShoppingCartService) { }
 
-  constructor(private route: ActivatedRoute,private productListService: ProductListService, private shoppingCartService: ShoppingCartService) { }
-
-
-  category: Category
-  productsOfCategory: Product[]
+  selectedProduct: Product;
+  category: Category;
+  productsOfCategory: Product[];
 
 
   ngOnInit(): void {
-      this.getProductList()
+      this.getProductList();
   }
 
   getProductList() {
@@ -29,12 +30,15 @@ export class CategoryDetailComponent implements OnInit {
     this.productListService.getProductByCategory(id).subscribe(ps => this.productsOfCategory = ps);
   }
 
-  selectedProducts: Product
+  // selectedProducts: Product;
+  // onSelect(product: Product): void {
+  //   this.selectedProducts = product;
+  // }
   onSelect(product: Product): void {
-    this.selectedProducts = product;
+    this.selectedProduct = product;
   }
 
-  onAddToShopCart(product: Product): void{
+  onAddToShopCart(product: Product): void {
     this.shoppingCartService.addProductToShopCart(product);
   }
 
