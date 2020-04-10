@@ -1,5 +1,8 @@
-<div *ngFor = "let product of productsOfCategory" >
 
+
+<div class="gird grid-pad">
+<div *ngFor = "let product of productsOfCategory" class="col-1-3">
+  <div class="borders">
     <img [src]="product.image || product.image_src"
         [routerLink]="['/products', product.id ]" >
     <p (click)= "onSelect(product)">
@@ -7,7 +10,8 @@
       <br>
       <a >
         {{product.price}} тнг.</a><br>
-      <button (click)= "onAddToShopCart(product)" >Add to Cart</button>
+      <button (click)= "onAddToShopCart(product)" class="myButton">Add to Cart</button>
     </p>
-
   </div>
+  </div>
+</div>

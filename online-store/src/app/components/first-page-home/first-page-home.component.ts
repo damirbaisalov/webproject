@@ -8,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class FirstPageHomeComponent implements OnInit {
 
   constructor() { }
+  //  const slides = document.querySelector('.slides');
+  // const slidesCount  = slides.childElementCount;
+  // const maxLeft = (slidesCount - 1) * 100 * - 1;
+
+
 
   ngOnInit(): void {
-  }
+      }
 
 }

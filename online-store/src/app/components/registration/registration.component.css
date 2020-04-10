@@ -43,3 +43,7 @@ p{
 #create :hover{
   color: rgb(10, 10, 221);
 }
+.center {
+ margin: 0 auto;
+
+}

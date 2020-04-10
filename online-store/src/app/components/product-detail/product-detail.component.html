@@ -1,20 +1,16 @@
-<p>product-detail works!</p>
+<div class="box-siz">
 <div *ngFor = "let product of productsList">
     <div *ngIf = "selectedProductId == product.id">
 
-        <div >
-          <img [src]="product.image_src">
+        <div class="row" >
+          <div class="column-1"><img [src]="product.image_src"></div>
+          <div class="column-2">
+            <h1 >{{product.name}}</h1>
+            <h3>{{product.description}}</h3><br>
+            <h2>{{product.price}} тнг.</h2><button (click)= "onAddToCart(product)" class="myButton">ADD TO CART</button>
+          </div>
         </div>
-        <nav ><h2 >{{product.name}}</h2>
-        <p >
-            {{product.price}} тнг.
-        </p>
-        <p>
-            {{product.description}}
-            </p>
-        <button (click)= "onAddToCart(product)" >ADD TO CHART</button>
-        </nav>
-        <div><img [src]="product.image_src"></div>
-        <div><img [src]="product.image_src"></div>
+
     </div>
+</div>
 </div>

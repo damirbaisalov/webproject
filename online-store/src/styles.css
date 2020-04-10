@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+/*html, body {*/
+/*  height: 100%;*/
+/*  width: 100%;*/
+/*  margin: 0;*/
+/*  font-family: 'Roboto', sans-serif;*/
+/*}*/
+*{
+  box-sizing: border-box;
+}
+body {
+  background-image: url("https://mvmprint.bg/wp-content/uploads/2017/06/47130089-keyboard-wallpaper.jpg");
+  background-size: cover;
+}
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
