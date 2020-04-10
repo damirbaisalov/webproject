@@ -3,11 +3,12 @@
     <div *ngIf = "selectedProductId == product.id">
 
         <div >
-          <img [src]="product.image_src">
+          <img [src]="product.image_src" class="">
         </div>
+
         <nav ><h2 >{{product.name}}</h2>
-        <p >
-            {{product.price}} тнг.
+        <p>
+            {{product.price}} ₸
         </p>
         <p>
             {{product.description}}
