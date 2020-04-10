@@ -34,7 +34,7 @@ export class InMemoryDataService {
       },
       {
         id: 2,
-        name: 'Игровой консоль Sony Play Station 4',
+        name: 'Игровой консоль Sony PlayStation4',
         image_src: 'https://www.technodom.kz/media/catalog/product/cache/1366e688ed42c99cd6439df4031862c6/2/0/206282a261b26d07641bca3c483247d0db758939_210814_1.jpg',
         image_2: 'https://www.technodom.kz/media/catalog/product/cache/1366e688ed42c99cd6439df4031862c6/a/a/aa64b086e1f18773cb2f0af88228d6036edb5479_210814_2.jpg',
         price: '169 990',
@@ -136,7 +136,7 @@ export class InMemoryDataService {
       },
       {
         id: 14,
-        name: 'ASUS LAPTOP X509UJ-EJ037T SLATE',
+        name: 'ASUS LAPTOP X509UJ-EJ037TSLATE',
         image_src: 'https://object.pscloud.io/cms/cms/Photo/img_0_62_1626_2.jpg',
         image_2: 'https://object.pscloud.io/cms/cms/Photo/img_0_62_1626_0.jpg',
         price: '199 990',
@@ -145,7 +145,7 @@ export class InMemoryDataService {
       },
       {
         id: 15,
-        name: 'ACER NITRO 5, AN515-54-5292',
+        name: 'ACER NITRO 5,AN515-54-5292',
         image_src: 'https://object.pscloud.io/cms/cms/Photo/img_0_62_1632_0.jpg',
         image_2: 'https://object.pscloud.io/cms/cms/Photo/img_0_62_1632_1.jpg',
         price: '419 490',
@@ -167,7 +167,7 @@ export class InMemoryDataService {
       },
       {
         id: 17,
-        name: 'Смартфон Apple iPhone 6s 16GB',
+        name: 'Смартфон Apple iPhone 6s',
         image_src: 'https://www.technodom.kz/media/catalog/product/cache/1366e688ed42c99cd6439df4031862c6/a/a/aa8d17548bdb1e5eb9b957715d0990bdded6bab4_187558_1.jpg',
         image_2: 'https://www.technodom.kz/media/catalog/product/cache/1366e688ed42c99cd6439df4031862c6/c/9/c9dcd9a0a7d5bf08835a28a9824444c9f79489aa_187558_3.jpg',
         price: '150000',
@@ -197,7 +197,7 @@ export class InMemoryDataService {
       },
       {
         id: 20,
-        name: 'Apple iPhone 7 Plus 128GB Black',
+        name: 'Apple iPhone 7 Plus 128GB',
         // tslint:disable-next-line:max-line-length
         image_src: 'https://www.technodom.kz/media/catalog/product/cache/1366e688ed42c99cd6439df4031862c6/e/a/ea379c26faf734fb5aa1b1b8262c3eed6263b700_39726_1.jpg',
         // tslint:disable-next-line:max-line-length
