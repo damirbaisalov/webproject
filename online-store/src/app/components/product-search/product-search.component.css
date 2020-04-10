@@ -4,7 +4,7 @@
   border-left: 1px solid gray;
   border-right: 1px solid gray;
   width: 195px;
-  height: 16px;
+  height: 30px;
   padding: 5px;
   background-color: white;
   cursor: pointer;
@@ -19,21 +19,24 @@
   color: #888;
   display: block;
   text-decoration: none;
+
 }
 
 .search-result li a:hover {
   color: white;
+
 }
 .search-result li a:active {
   color: white;
 }
 #search-box {
   width: 200px;
-  height: 20px;
+  height: 30px;
 }
 
 
 ul.search-result {
   margin-top: 0;
   padding-left: 0;
+
 }

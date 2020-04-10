@@ -1,15 +1,19 @@
-<p>shopping-cart works!</p>
+
+<div class="grid grid-pad">
 <div *ngFor = "let product of productsInCart" >
-    <p>{{product.name}}</p>
+  <H1><span style="background: #FFFFFF" >{{product.name}}</span></H1>
     <h3>
       <img [src]="product.image_src" >
       <p *ngIf = "product.description">
-        Description: {{product.description}}
+        <span style="background: cornflowerblue;color:#f2f2f2">Description:</span> {{product.description}}
       </p>
       <p>
-        Price: {{product.price}}
+        <span style="background: cornflowerblue;color:#f2f2f2">Price:</span> {{product.price}} тенге.
       </p>
-      <button (click)= "removeProductFromCart(product)" >Remove from cart</button>
+      <button class="myButton2">Checkout</button>
+      <BR>
+      <button (click)= "removeProductFromCart(product) " class="myButton" >Remove from cart</button>
     </h3>
     <hr>
   </div>
+</div>
