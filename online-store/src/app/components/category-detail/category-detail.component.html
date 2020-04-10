@@ -3,10 +3,10 @@
 <div class="gird grid-pad">
 <div *ngFor = "let product of productsOfCategory" class="col-1-3">
   <div class="borders">
-    <div class="image-cover"><img [src]="product.image || product.image_src"
+    <div class="image-cover"><img [src]="product.image_src"
         [routerLink]="['/products', product.id ]" ></div>
     <p (click)= "onSelect(product)">
-      <a [routerLink]="['/products', product.id ]"><h2>{{product.name}}</h2></a>
+      <a [routerLink]="['/products', product.id ]"><h3>{{product.name}}</h3></a>
       <br>
       <a><h3>Цена: {{product.price}} тнг.</h3></a><br>
       <button (click)= "onAddToShopCart(product)" class="myButton">Add to Cart</button>
