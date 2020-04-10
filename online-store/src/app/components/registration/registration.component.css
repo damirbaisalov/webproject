@@ -1,10 +1,16 @@
+.centere {
+  width: 100%;
+}
+
 .registr{
+  display: table;
+  margin: 0 auto;
   width: 400px;
   height: 435px;
-  margin-left: 400px;
+  /*margin-left: 400px;*/
   border-radius: 5px;
   border: 1px solid rgb(153, 153, 240);
-  margin-top: 150px;
+  margin-top: 90px;
   background-color: white;
   font-family: Arial, Helvetica, sans-serif;
 }

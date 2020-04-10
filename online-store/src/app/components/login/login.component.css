@@ -1,18 +1,20 @@
 
 .center {
-  margin:0 auto;
+  width: 100%;
 }
 
 .vhod{
-
+  display: table;
+  margin: 0 auto;
   width: 400px;
   height: 350px;
-  margin-left: 440px;
+  /*margin-left: 440px;*/
   border-radius: 5px;
   border: 1px solid rgb(153, 153, 240);
-  margin-top: 150px;
+  margin-top: 90px;
   background-color: white;
   font-family: Arial, Helvetica, sans-serif;
+
 
 }
 #container {
@@ -51,12 +53,15 @@ button{
 }
 
 .new{
+  display: flex;
+  margin: 0 auto;
   margin-top: 20px;
-  margin-left: 440px;
+  /*margin-left: 440px;*/
   width: 400px;
   height: 60px;
   border: 1px solid rgb(153, 153, 240);
   border-radius: 5px;
+  background: #f2f2f2;
 }
 #new{
   margin-top: 17px;
