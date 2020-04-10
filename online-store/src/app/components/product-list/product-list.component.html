@@ -7,7 +7,7 @@
     <div class="image-cover"><img [src]="product.image || product.image_src"
           [routerLink]="['/products', product.id ]" ></div>
     <p (click)= "onSelect(product)">
-      <br><a routerLink="/products/{{product.id}}"><span><h3>{{product.name}}</h3></span></a>
+      <br><a routerLink="/products/{{product.id}}"><span><h2>{{product.name}}</h2></span></a>
      <a><h4> Цена: {{product.price}} тнг.</h4></a>
     <br><button [routerLink]="['/products', product.id ]" class="myButton">Detail</button>
       <button (click)= "onAddToShopCart(product)" class="myButton">Add to Cart</button>

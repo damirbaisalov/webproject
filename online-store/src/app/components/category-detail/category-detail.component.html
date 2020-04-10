@@ -6,10 +6,9 @@
     <img [src]="product.image || product.image_src"
         [routerLink]="['/products', product.id ]" >
     <p (click)= "onSelect(product)">
-      <a [routerLink]="['/products', product.id ]" >{{product.name}}</a>
+      <a [routerLink]="['/products', product.id ]"><h2>{{product.name}}</h2></a>
       <br>
-      <a >
-        {{product.price}} тнг.</a><br>
+      <a><h3>Цена: {{product.price}} тнг.</h3></a><br>
       <button (click)= "onAddToShopCart(product)" class="myButton">Add to Cart</button>
     </p>
   </div>
