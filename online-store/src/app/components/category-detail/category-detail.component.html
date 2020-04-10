@@ -3,8 +3,8 @@
 <div class="gird grid-pad">
 <div *ngFor = "let product of productsOfCategory" class="col-1-3">
   <div class="borders">
-    <img [src]="product.image || product.image_src"
-        [routerLink]="['/products', product.id ]" >
+    <div class="image-cover"><img [src]="product.image || product.image_src"
+        [routerLink]="['/products', product.id ]" ></div>
     <p (click)= "onSelect(product)">
       <a [routerLink]="['/products', product.id ]"><h2>{{product.name}}</h2></a>
       <br>

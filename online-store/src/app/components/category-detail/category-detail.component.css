@@ -70,6 +70,14 @@ h4 {
     min-width: 60px;
   }
 }
+.image-cover img {
+  width: 100%;
+}
+.image-cover{
+  width: 80%;
+  height: 40%;
+  margin: 0 auto;
+}
 
 
 .myButton {
