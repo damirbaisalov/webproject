@@ -13,7 +13,7 @@ export class ShoppingCartService {
 
   constructor() { }
 
-  addProductToShopCart(product: Product){
+  addProductToShopCart(product: Product) {
     this.shopCart.push(product);
   }
 
@@ -21,10 +21,10 @@ export class ShoppingCartService {
     return of(this.shopCart);
   }
 
-  removeFromShopCart(product: Product){
-    for (let i=0;i<this.shopCart.length;i++){
-      if(this.shopCart[i].id==product.id){
-        this.shopCart.splice(i,1);
+  removeFromShopCart(product: Product) {
+    for (let i = 0; i < this.shopCart.length; i++) {
+      if (this.shopCart[i].id === product.id) {
+        this.shopCart.splice(i, 1);
       }
     }
     // this.shopCart.forEach(currentProductInCart => {
@@ -32,7 +32,7 @@ export class ShoppingCartService {
     //         this.shopCart.splice(currentProductInCart.id,1);
     //     }
     // });
-    this.shopCart.find(p => p.id==product.id)
+    this.shopCart.find(p => p.id === product.id);
 
   }
 
