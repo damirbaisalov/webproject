@@ -5,7 +5,7 @@
   <div class="borders">
     <div class="image-cover"><img [src]="product.image_src"
         [routerLink]="['/products', product.id ]" ></div>
-    <p (click)= "onSelect(product)">
+    <p >
       <a [routerLink]="['/products', product.id ]"><h3>{{product.name}}</h3></a>
       <br>
       <a><h3>Цена: {{product.price}} тнг.</h3></a><br>

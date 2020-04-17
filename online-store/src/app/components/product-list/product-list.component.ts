@@ -24,17 +24,17 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProductList();
-    this.getCategories();
-    this.getListOfProducts();
+    // this.getCategories();
+    // this.getListOfProducts();
   }
 
-  getCategories() {
-      this.categoryListService.getCategory().subscribe(c => this.categories = c);
-  }
-  getListOfProducts() {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.productListService.getProductByCategory(id).subscribe(p => this.products = p);
-  }
+  // getCategories() {
+  //     this.categoryListService.getCategory().subscribe(c => this.categories = c);
+  // }
+  // getListOfProducts() {
+  //   const id = +this.route.snapshot.paramMap.get('id');
+  //   this.productListService.getProductByCategory(id).subscribe(p => this.products = p);
+  // }
 ///////
   getProductList(): void {
     this.productListService.getProductList().subscribe( c => this.productsList = c);
