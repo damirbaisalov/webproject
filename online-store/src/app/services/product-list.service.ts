@@ -15,11 +15,15 @@ export class ProductListService {
   // products = ProductList;
   // categories = CategoryList;
 
+  BASE_URL = 'http://localhost:8000';
+
   private categoriesUrl = 'api/categories';
   private productsUrl = 'api/products';
   products: Product[];
+
+
   getProductList(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.productsUrl);
+    return this.http.get<Product[]>(`${this.BASE_URL}/api/products/`);
   }
 
   getProductByCategory(id: number): Observable<Product[]> {
@@ -27,10 +31,15 @@ export class ProductListService {
     return this.http.get<Product[]>(url);
   }
 
-  getNameOfCategory(id): Observable<any> {
-    const url = `${this.categoriesUrl}/${id}`;
-    return this.http.get(url);
+  getProductListByCategory(id): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.BASE_URL}/api/categories/${id}/products/`);
   }
+
+  // getNameOfCategory(id): Observable<any> {
+  //   const url = `${this.categoriesUrl}/${id}`;
+  //   return this.http.get(url);
+  // }
+
 
   searchProduct(term: string): Observable<Product[]> {
     if (!term.trim()) {

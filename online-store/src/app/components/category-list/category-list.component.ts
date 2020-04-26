@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute} from '@angular/router';
 import {Category} from '../../interfaces/category';
-import {CategoryListService} from '../../services/category-list.service'
+import {CategoryListService} from '../../services/category-list.service';
 
 @Component({
   selector: 'app-category-list',
@@ -11,21 +11,22 @@ import {CategoryListService} from '../../services/category-list.service'
 })
 export class CategoryListComponent implements OnInit {
 
-  constructor( private route: ActivatedRoute, private categoryListService: CategoryListService) { }
+  constructor( private route: ActivatedRoute, public categoryListService: CategoryListService) { }
 
-  categories: Category[];
+  categories: Category[] = [];
 
   ngOnInit(): void {
-    this.getCategory();
+    this.getCategories();
   }
 
-  getCategory(): void {
-    this.categoryListService.getCategory().subscribe(categories => this.categories = categories);
+  getCategories(): void {
+    this.categoryListService.getCategoryList().subscribe(categories => this.categories = categories);
   }
-  //
-  // selectedCategory: Category;
-  // onSelect(category: Category):void{
-  //   this.selectedCategory = category;
-  // }
 
+  deleteCompany(id) {
+    this.categoryListService.deleteСategory(id).subscribe(res => {
+      // this.categories = this.categories.filter(c => c.id != id);
+      // this.getCategoryList();
+    });
+  }
 }

@@ -15,11 +15,13 @@ import { CategoryListComponent } from '../category-list/category-list.component'
 })
 export class ProductListComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private productListService: ProductListService, private shopCartService: ShoppingCartService, private categoryListService: CategoryListService) { }
+  constructor(private route: ActivatedRoute, private productListService: ProductListService,
+              private shopCartService: ShoppingCartService,
+              private categoryListService: CategoryListService) { }
 
   productsList: Product[];
   products: Product[];
-  categories: Category[];
+  // categories: Category[];
   selectedProduct: Product;
 
   ngOnInit(): void {
@@ -36,6 +38,7 @@ export class ProductListComponent implements OnInit {
   //   this.productListService.getProductByCategory(id).subscribe(p => this.products = p);
   // }
 ///////
+
   getProductList(): void {
     this.productListService.getProductList().subscribe( c => this.productsList = c);
   }

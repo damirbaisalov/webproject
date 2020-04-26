@@ -21,8 +21,10 @@ class Category(models.Model):
 
 class Product(models.Model):
 	name = models.CharField(max_length=300)
-	description = models.TextField(default="")
+	image_src = models.TextField(default="")
+	image_2 = models.TextField(default="")
 	price = models.FloatField()
+	description = models.TextField(default="")
 	category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
 	def to_string(self):
@@ -32,6 +34,8 @@ class Product(models.Model):
 		return {
 			'id': self.id,
 			'name': self.name,
+			'image_src': self.image_src,
+			'image_2': self.image_2,
             'price': self.price,
 			'description': self.description
 		}
