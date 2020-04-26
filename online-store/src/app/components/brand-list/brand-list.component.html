@@ -1,0 +1,8 @@
+<div class="centere">
+  <h1 style="color:aquamarine;background: #5383d3"><B>Brands</B></h1>
+  <ul class="brands">
+    <li *ngFor = "let brand of brand">
+      <a [routerLink]="['/brands/',brand.id]">{{brand.name}}</a>
+    </li>
+  </ul>
+</div>

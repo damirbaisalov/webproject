@@ -1,9 +1,13 @@
+import json
+
+from django.http import JsonResponse
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
-from api.models import Category, Product, Cart
-from api.serializers import CategorySerializer,ProductSerializer
+from api.models import Category, Product, Cart, Brand
+from api.serializers import CategorySerializer, ProductSerializer, BrandSerializer
+
 
 @api_view(['GET', 'POST'])
 def category_list(request):
@@ -131,3 +135,44 @@ def vacancy_detail(request, product_id):
 #             return Response(serializer.data, status=status.HTTP_201_CREATED)
 #         return Response({'error': serializer.errors},
 #                         status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+@api_view(['GET', 'POST'])
+def brands_list(request):
+    if request.method == 'GET':
+        brands = Brand.objects.all()
+        serializer = BrandSerializer(brands, many=True)
+
+        return JsonResponse(serializer.data, safe=False)
+
+    elif request.method == 'POST':
+        request_body = json.loads(request.body)
+
+        serializer = BrandSerializer(data=request_body)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse({'error': serializer.error}, status=status.HTTP_201_CREATED)
+        return JsonResponse({'error': serializer.errors},
+                            status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['GET','PUT', 'DELETE'])
+def brands_detail(request, brand_id):
+    try:
+        brand = Brand.objects.get(id=brand_id)
+    except Brand.DoesNotExist as e:
+        return Response({'error': str(e)})
+
+    if request.method == 'GET':
+        serializer = BrandSerializer(brand)
+        return Response(serializer.data)
+
+    elif request.method == 'PUT':
+        serializer = BrandSerializer(instance=brand, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response({'error': serializer.errors})
+
+    elif request.method == 'DELETE':
+        brand.delete()
+
+        return Response({'deleted': True})

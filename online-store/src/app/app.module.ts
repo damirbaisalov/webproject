@@ -22,6 +22,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import {FormsModule} from '@angular/forms';
 import {AuthInterceptor} from './auth.interceptor';
+import { BrandListComponent } from './components/brand-list/brand-list.component';
+import { BrandDetailComponent } from './brand-detail/brand-detail.component';
 
 
 
@@ -39,7 +41,9 @@ import {AuthInterceptor} from './auth.interceptor';
     FirstPageHomeComponent,
     ProductSearchComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    BrandListComponent,
+    BrandDetailComponent
   ],
   imports: [
     BrowserModule,

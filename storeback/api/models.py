@@ -25,6 +25,7 @@ class Product(models.Model):
     image_2 = models.TextField(default="")
     price = models.FloatField()
     description = models.TextField(default="")
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def to_string(self):
@@ -42,3 +43,19 @@ class Product(models.Model):
 
 class Cart(models.Model):
     product = models.ManyToManyField(Product)
+
+class Brand(models.Model):
+  name = models.CharField(max_length=300)
+
+  class Meta:
+    verbose_name = 'Brand'
+    verbose_name_plural = 'Brands'
+
+  def to_string(self):
+    return "{}: {}".format(self.id, self.name)
+
+  def to_json(self):
+    return {
+      'id': self.id,
+      'name': self.name
+    }
