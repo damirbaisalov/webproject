@@ -2,7 +2,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
-from api.models import Category,Product
+from api.models import Category, Product, Cart
 from api.serializers import CategorySerializer,ProductSerializer
 
 @api_view(['GET', 'POST'])
@@ -104,3 +104,30 @@ def vacancy_detail(request, product_id):
         product.delete()
 
         return Response({'deleted': True})
+##################################################################
+# @api_view(['GET'])
+# def products_cart(request):
+#     try:
+#         cart = Cart.objects.get(id=1)
+#     except Cart.DoesNotExist as e:
+#         return Response({'error': str(e)})
+#     if request.method == 'GET':
+#         products = cart.product.all()
+#         serializer = ProductSerializer(products, many=True)
+#         return Response(serializer.data)
+
+# @api_view(['GET', 'POST', 'DELETE'])
+# def product_cart_2(request):
+#     if request.method == 'GET':
+#        products = Product.objects.all()
+#        serializer = ProductSerializer(products, many=True)
+#
+#        return Response(serializer.data)
+#
+#     elif request.method == 'POST':
+#         serializer = ProductSerializer(data=request.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response(serializer.data, status=status.HTTP_201_CREATED)
+#         return Response({'error': serializer.errors},
+#                         status=status.HTTP_500_INTERNAL_SERVER_ERROR)

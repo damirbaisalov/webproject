@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Product} from "../../interfaces/product";
-import {ShoppingCartService} from "../../services/shopping-cart.service";
+import {Product} from '../../interfaces/product';
+import {ShoppingCartService} from '../../services/shopping-cart.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -9,20 +10,22 @@ import {ShoppingCartService} from "../../services/shopping-cart.service";
 })
 export class ShoppingCartComponent implements OnInit {
 
-  productsInCart : Product[] = []
+  productsInCart: Product[];
 
-  constructor(private shopCartService: ShoppingCartService) { }
+  constructor(private shopCartService: ShoppingCartService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getProductInCart()
+    this.getProductFromCart();
   }
 
-  getProductInCart(): void {
-    this.shopCartService.getProductInShopCart().subscribe(p => this.productsInCart = p)
+  getProductFromCart(): void {
+    this.shopCartService.getProductFromCart().subscribe( products => this.productsInCart = products);
   }
 
-  removeProductFromCart(product: Product){
-    this.shopCartService.removeFromShopCart(product)
+  deleteProductsFromCart(product: Product) {
+    this.productsInCart = this.productsInCart.filter(p => p !== product);
+    this.shopCartService.deleteProductFromCart(product).subscribe();
   }
+
 
 }

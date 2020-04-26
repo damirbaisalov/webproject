@@ -21,7 +21,7 @@ import { ProductSearchComponent } from './components/product-search/product-sear
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import {FormsModule} from '@angular/forms';
-import {AuthInterceptor} from '../auth.interceptor';
+import {AuthInterceptor} from './auth.interceptor';
 
 
 
@@ -46,10 +46,10 @@ import {AuthInterceptor} from '../auth.interceptor';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+    //
+    // HttpClientInMemoryWebApiModule.forRoot(
+    //   InMemoryDataService, { dataEncapsulation: false }
+    // )
   ],
   providers: [
     {

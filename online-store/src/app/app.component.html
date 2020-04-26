@@ -1,20 +1,27 @@
-<!-- <app-nav></app-nav>
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <app-shopping-cart></app-shopping-cart>
+
+<div *ngIf="!logged">
+  <app-nav></app-nav>
+  <div class="center">
+    <div class="vhod">
+      <p>Username</p>
+      <input type="text" class="inputs" [(ngModel)]="username"> <br>
+      <p>Password</p>
+      <input type="password"  class="inputs" [(ngModel)]="password">
+      <button (click)="login()">Sign In</button>
+    </div>
+    <div class="new">
+      <p id="new">New? <a routerLink="/registration">Create an account</a></p>
     </div>
   </div>
+  <app-footer></app-footer>
+</div>
 
-  <div class="row">
-    <div class="col">
-      <app-footer></app-footer>
-    </div>
-  </div>
-</div> -->
 
-<app-nav></app-nav>
+<div *ngIf="logged">
+  <app-nav></app-nav>
 <router-outlet></router-outlet>
-<app-footer></app-footer>
+  <app-footer></app-footer>
+</div>
+
 

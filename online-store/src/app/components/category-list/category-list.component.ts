@@ -23,10 +23,10 @@ export class CategoryListComponent implements OnInit {
     this.categoryListService.getCategoryList().subscribe(categories => this.categories = categories);
   }
 
-  deleteCompany(id) {
-    this.categoryListService.deleteСategory(id).subscribe(res => {
-      // this.categories = this.categories.filter(c => c.id != id);
-      // this.getCategoryList();
-    });
-  }
+  // deleteCompany(id) {
+  //   this.categoryListService.deleteСategory(id).subscribe(res => {
+  //     // this.categories = this.categories.filter(c => c.id != id);
+  //     // this.getCategoryList();
+  //   });
+  // }
 }

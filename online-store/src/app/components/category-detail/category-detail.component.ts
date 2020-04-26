@@ -18,7 +18,7 @@ export class CategoryDetailComponent implements OnInit {
 
   selectedProduct: Product;
   category: Category;
-  productsOfCategory: Product[];
+  productsOfCategory: Product[] = [];
 
 
   ngOnInit(): void {
@@ -27,7 +27,7 @@ export class CategoryDetailComponent implements OnInit {
 
   getProductList() {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.productListService.getProductByCategory(id).subscribe(ps => this.productsOfCategory = ps);
+    this.productListService.getProductListByCategory(id).subscribe(products => this.productsOfCategory = products);
   }
 
   // selectedProducts: Product;
@@ -39,7 +39,7 @@ export class CategoryDetailComponent implements OnInit {
   }
 
   onAddToShopCart(product: Product): void {
-    this.shoppingCartService.addProductToShopCart(product);
+    this.shoppingCartService.addProductToCart(product);
   }
 
 

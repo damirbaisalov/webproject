@@ -2,7 +2,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from api.models import Category,Product
+from api.models import Category, Product, Cart
 from api.serializers import CategorySerializer,ProductSerializer
 
 class CategoryListAPIView(APIView):
@@ -99,3 +99,22 @@ class CategoryProductsAPIView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response({'error': serializer.errors},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+###########################################################################
+# class ProductInCart(APIView):
+#     def get_object(self, id):
+#         try:
+#             return Product.objects.get(id=id)
+#         except Product.DoesNotExist as e:
+#             return Response({'error': str(e)})
+#
+#     def delete(self, request, pk):
+#         product = self.get_object(pk)
+#         cart = Cart.objects.get(id=3)
+#         cart.product.remove(product)
+#         return Response({'DELETED': True})
+#
+#     def post(self, request, pk):
+#         product = self.get_object(pk)
+#         cart = Cart.objects.get(id=3)
+#         cart.product.add(product)
+#         return Response({'ADDED': True})

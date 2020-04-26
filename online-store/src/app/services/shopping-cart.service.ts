@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Observable,of} from 'rxjs';
+import {Observable, of} from 'rxjs';
 
 import {Product} from '../interfaces/product';
+import {HttpClient} from '@angular/common/http';
 
 
 @Injectable({
@@ -9,31 +10,22 @@ import {Product} from '../interfaces/product';
 })
 export class ShoppingCartService {
 
-  shopCart: Product[] = [];
+  BASE_URL = 'http://127.0.0.1:8000';
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  addProductToShopCart(product: Product) {
-    this.shopCart.push(product);
+
+  getProductFromCart(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.BASE_URL}/api/cart/products/`);
   }
 
-  getProductInShopCart(): Observable<Product[]> {
-    return of(this.shopCart);
+  addProductToCart(product: Product) {
+    return this.http.post<Product>(`${this.BASE_URL}/api/cart/products/`, product);
   }
 
-  removeFromShopCart(product: Product) {
-    for (let i = 0; i < this.shopCart.length; i++) {
-      if (this.shopCart[i].id === product.id) {
-        this.shopCart.splice(i, 1);
-      }
-    }
-    // this.shopCart.forEach(currentProductInCart => {
-    //     if (currentProductInCart.id == product.id){
-    //         this.shopCart.splice(currentProductInCart.id,1);
-    //     }
-    // });
-    this.shopCart.find(p => p.id === product.id);
-
+  deleteProductFromCart(product: Product) {
+    return this.http.delete<Product>(`${this.BASE_URL}/api/cart/products/${product.id}/`);
   }
+
 
 }

@@ -153,9 +153,6 @@ export class InMemoryDataService {
         category: 3
       },
 
-
-
-
       {
         id: 16,
         name: 'SAMSUNG GALAXY A40',
@@ -178,7 +175,6 @@ export class InMemoryDataService {
         id: 18,
         name: 'Apple iPhone 11 128GB Black',
         image_src: 'https://www.technodom.kz/media/catalog/product/cache/1366e688ed42c99cd6439df4031862c6/0/7/07a6f8712ee22e3ebd84e5555d283f5a3e780297_178275_1.jpg',
-        // tslint:disable-next-line:max-line-length
         image_2: 'https://www.technodom.kz/media/catalog/product/cache/1366e688ed42c99cd6439df4031862c6/c/9/c9c3803db300b43e8820f204cb7634f9fd1d3b2e_178275_5.jpg',
         price: '484 990',
         description: 'asdfg',
@@ -187,9 +183,7 @@ export class InMemoryDataService {
       {
         id: 19,
         name: 'Apple iPhone XR 128GB White',
-        // tslint:disable-next-line:max-line-length
         image_src: 'https://www.technodom.kz/media/catalog/product/cache/1366e688ed42c99cd6439df4031862c6/1/6/16109ed3d07688b700076778ed47b8a61534c820_15662207369246.jpg',
-        // tslint:disable-next-line:max-line-length
         image_2: 'data:image/jpeg;base64,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',
         price: '419 990',
         description: 'dsa',
@@ -198,9 +192,7 @@ export class InMemoryDataService {
       {
         id: 20,
         name: 'Apple iPhone 7 Plus 128GB',
-        // tslint:disable-next-line:max-line-length
         image_src: 'https://www.technodom.kz/media/catalog/product/cache/1366e688ed42c99cd6439df4031862c6/e/a/ea379c26faf734fb5aa1b1b8262c3eed6263b700_39726_1.jpg',
-        // tslint:disable-next-line:max-line-length
         image_2: 'https://www.technodom.kz/media/catalog/product/cache/1366e688ed42c99cd6439df4031862c6/f/4/f457f0f30a60c970163b72f63b680323ac1284b3_39726_2.jpg',
         price: '299 990',
         description: 'oj',

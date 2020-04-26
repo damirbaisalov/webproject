@@ -15,7 +15,7 @@ export class ProductListService {
   // products = ProductList;
   // categories = CategoryList;
 
-  BASE_URL = 'http://localhost:8000';
+  BASE_URL = 'http://127.0.0.1:8000';
 
   private categoriesUrl = 'api/categories';
   private productsUrl = 'api/products';
@@ -26,10 +26,10 @@ export class ProductListService {
     return this.http.get<Product[]>(`${this.BASE_URL}/api/products/`);
   }
 
-  getProductByCategory(id: number): Observable<Product[]> {
-    const url = `${this.productsUrl}/?category=${id}`;
-    return this.http.get<Product[]>(url);
-  }
+  // getProductByCategory(id: number): Observable<Product[]> {
+  //   const url = `${this.BASE_URL}/api/categories/${id}`;
+  //   return this.http.get<Product[]>(url);
+  // }
 
   getProductListByCategory(id): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.BASE_URL}/api/categories/${id}/products/`);
@@ -40,6 +40,9 @@ export class ProductListService {
   //   return this.http.get(url);
   // }
 
+  getProduct(id): Observable<Product> {
+    return this.http.get<Product>(`${this.BASE_URL}/api/products/${id}/`);
+  }
 
   searchProduct(term: string): Observable<Product[]> {
     if (!term.trim()) {

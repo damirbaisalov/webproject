@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from api.models import Category, Product
+from api.models import Category, Product, Cart
 
 class CategorySerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
@@ -33,6 +33,13 @@ class CategoryWithProductSerlializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = ('id', 'name', 'products')
+
+class CartSerializer(serializers.ModelSerializer):
+    product = ProductSerializer(many=True)
+
+    class Meta:
+        model = Cart
+        fields = {'__all__'}
 # class ProductSerializer(serializers.Serializer):
 #     id = serializers.IntegerField(read_only=True)
 #     name = serializers.CharField()

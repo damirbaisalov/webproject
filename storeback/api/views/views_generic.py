@@ -9,7 +9,7 @@ from rest_framework.permissions import IsAuthenticated
 class CategoryListAPIView(generics.ListCreateAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
-    # permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
 
 class CompanyDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Category.objects.all()
@@ -30,6 +30,7 @@ class ProductDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
 #     queryset = Vacancy.objects.all()
 #     serializer_class = CompanyWithVacanciesSerializer
 ###############################################################################
+
 class CategoryProductsAPIView(APIView):
     def get(self, request, category_id):
         products = Product.objects.filter(category_id=category_id)

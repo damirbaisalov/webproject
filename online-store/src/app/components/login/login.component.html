@@ -1,13 +1,14 @@
-
+<div *ngIf="!logged">
 <div class="center">
 <div class="vhod">
   <p>Username</p>
-  <input type="text" class="inputs"> <br>
+  <input type="text" class="inputs" [(ngModel)]="username"> <br>
   <p>Password</p>
-  <input type="password"  class="inputs">
-  <button>Sign In</button>
+  <input type="password"  class="inputs" [(ngModel)]="password">
+  <button (click)="login()">Sign In</button>
 </div>
   <div class="new">
     <p id="new">New? <a routerLink="/registration">Create an account</a></p>
   </div>
+</div>
 </div>

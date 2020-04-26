@@ -10,5 +10,8 @@ urlpatterns = [
     path('categories/', views_generic.CategoryListAPIView.as_view()),
     path('categories/<int:category_id>/products/', views_generic.CategoryProductsAPIView.as_view()),
     path('products/', views_generic.ProductListAPIView.as_view()),
-    path('products/<int:product_id>/', views_generic.ProductDetailAPIView.as_view())
+    path('products/<int:product_id>/', views_generic.ProductDetailAPIView.as_view()),
+
+    path('cart/products/', views_fbv.products_cart),
+    path('cart/products/<int:pk>/', views_cbv.ProductInCart.as_view()),
 ]
